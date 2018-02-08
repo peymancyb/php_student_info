@@ -24,5 +24,31 @@ if ($conn->query($sql) === TRUE) {
     echo "Error deleting record: " . $conn->error;
 }
 
+
+$query = ("DELETE FROM emp WHERE genre = '$genre_of_the_book' OR author = '$name_of_the_author' OR title = '$title_of_the_book' OR date = '$date_of_the_publishing' OR page = '$number_of_the_pages' ");
+  $result = @mysql_query($query);
+  if ($result === TRUE) {
+    echo "Record deleted successfully";
+  } else {
+      echo "Error deleting record: " . $conn->error;
+  }
+
+
+
+  $query = ("DELETE FROM emp WHERE `genre` = '$genre_of_the_book' OR `author` = '$name_of_the_author' OR `title` = '$title_of_the_book' OR `date` = '$date_of_the_publishing' OR `page` = '$number_of_the_pages' ");
+    $result = @mysql_query($query);
+    if ($result === TRUE) {
+      echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . $conn->error;
+    }
+
+
+
+
+
+
+
+
 $conn->close();
 ?>
